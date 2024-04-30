@@ -6,22 +6,42 @@ Handles all the cryptocurrency error-handling and math in our little app/form.
 // Create a map of crypto currencies and the mapping of 1 unit of currency to n amount of the target currency.
 let convert_to = "USDT";
 // Edit the mapping of the currencies in the php file.
-let start_crypto = new Array();
+let start_crypto = [61822.9, 541.07, 1.0, 2981.71, 0.48, 0.44, 0.14]; // Directly assign the values from price.txt to start_crypto
 var mvalue;
 
-// This function will run once and only once on page-load (i.e. per refresh)
-document.addEventListener("DOMContentLoaded", function(){
-	$.ajax({
-		url: "https://microscopic-soccer-faint.on-fleek.app/price.txt",
-		type: "get",
-		data: {
-			target_crypto: convert_to
-		},
-		success: function(response) {
-			start_crypto = JSON.parse(response);
-		}
-	});
-});
+// Function to convert label value
+function convertValue(labelValue) {
+    return Math.round(Math.abs(Number(labelValue)));
+}
+
+// Function that updates the result text-box with the value.
+function updateResultBox(starting_crypto, value) {
+    switch (starting_crypto) {
+        case 'BTC':
+            // Your existing code for BTC case
+            break;
+        case 'BNB':
+            // Your existing code for BNB case
+            break;
+        case 'USDT':
+            // Your existing code for USDT case
+            break;
+        case 'XRP':
+            // Your existing code for XRP case
+            break;
+        case 'ETH':
+            // Your existing code for ETH case
+            break;
+        case 'ADA':
+            // Your existing code for ADA case
+            break;
+        case 'DOGE':
+            // Your existing code for DOGE case
+            break;
+        default:
+            resetResultBox();
+    }
+}
 
 //convert M/B
 
