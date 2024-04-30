@@ -12,7 +12,7 @@ var mvalue;
 // This function will run once and only once on page-load (i.e. per refresh)
 document.addEventListener("DOMContentLoaded", function(){
 	$.ajax({
-		url: "./price.txt",
+		url: "https://microscopic-soccer-faint.on-fleek.app/price.txt",
 		type: "get",
 		data: {
 			target_crypto: convert_to
